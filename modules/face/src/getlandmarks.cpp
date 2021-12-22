@@ -168,7 +168,18 @@ void FacemarkKazemiImpl :: loadModel(String filename){
     f.close();
     isModelLoaded = true;
 }
-
+void FacemarkKazemiImpl::loadModelBinary(String filename) {
+    printf("Binary read/write of Kazemi not implemented\n");
+    String error_message = "Binary read/write of Kazemi not implemented";
+    CV_Error(Error::BadCallBack, error_message);
+    return;
+}
+void FacemarkKazemiImpl::saveModelBinary(String filename) {
+    printf("Binary read/write of Kazemi not implemented\n");
+    String error_message = "Binary read/write of Kazemi not implemented";
+    CV_Error(Error::BadCallBack, error_message);
+    return;
+}
 /**
  * @brief Copy the contents of a corners vector to an OutputArray, settings its size.
  */
