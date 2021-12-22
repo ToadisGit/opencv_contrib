@@ -57,6 +57,8 @@ public:
     @endcode
     */
     CV_WRAP virtual void loadModel( String model ) = 0;
+    CV_WRAP virtual void loadModelBinary(String model) = 0;
+    CV_WRAP virtual void saveModelBinary(String model) = 0;
     // virtual void saveModel(String fs)=0;
 
     /** @brief Detect facial landmarks from an image.

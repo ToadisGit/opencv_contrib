@@ -98,6 +98,9 @@ public:
     void saveModel(String fs);
     void loadModel(String fs) CV_OVERRIDE;
 
+    void loadModelBinary(String fs) CV_OVERRIDE;
+    void saveModelBinary(String fs) CV_OVERRIDE;
+
     bool setFaceDetector(bool(*f)(InputArray , OutputArray, void * ), void* userData) CV_OVERRIDE;
     bool getFaces(InputArray image, OutputArray faces) CV_OVERRIDE;
 
@@ -533,6 +536,10 @@ void FacemarkAAMImpl::saveModel(String s){
     if(params.verbose) printf("The model is successfully saved! \n");
 }
 
+void FacemarkAAMImpl::saveModelBinary(String s) {
+    if (params.verbose) printf("Binary read/write of AAM not implemented\n");
+    CV_Error(Error::BadCallBack, "Binary read/write of AAM not implemented!");
+}
 void FacemarkAAMImpl::loadModel(String s){
     FileStorage fs(s.c_str(),FileStorage::READ);
     String x;
@@ -581,6 +588,10 @@ void FacemarkAAMImpl::loadModel(String s){
     if(params.verbose) printf("the model has been loaded\n");
 }
 
+void FacemarkAAMImpl::loadModelBinary(String s) {
+    if (params.verbose) printf("Binary read/write of AAM not implemented\n");
+    CV_Error(Error::BadCallBack, "Binary read/write of AAM not implemented!");
+}
 Mat FacemarkAAMImpl::procrustes(std::vector<Point2f> P, std::vector<Point2f> Q, Mat & rot, Scalar & trans, float & scale){
 
     // calculate average

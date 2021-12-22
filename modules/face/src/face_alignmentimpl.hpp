@@ -71,6 +71,8 @@ class FacemarkKazemiImpl : public FacemarkKazemi{
 public:
     FacemarkKazemiImpl(const FacemarkKazemi::Params& parameters);
     void loadModel(String fs) CV_OVERRIDE;
+    void loadModelBinary(String fs) CV_OVERRIDE;
+    void saveModelBinary(String fs) CV_OVERRIDE;
     bool setFaceDetector(FN_FaceDetector f, void* userdata) CV_OVERRIDE;
     bool getFaces(InputArray image, OutputArray faces) CV_OVERRIDE;
     bool fit(InputArray image, InputArray faces, OutputArrayOfArrays landmarks ) CV_OVERRIDE;
